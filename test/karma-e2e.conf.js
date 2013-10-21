@@ -17,8 +17,7 @@ module.exports = function (config) {
             '/': 'http://localhost:8000/'
         },
 
-        runnerPort: 9100,
-
+        urlRoot: '/karma/',
 
         files: [
             'test/e2e/**/*.js'
