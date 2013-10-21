@@ -1,5 +1,8 @@
 module.exports = function (config) {
     config.set({
+
+        basePath: '../',
+
         frameworks: ['ng-scenario'],
 
         reporters: ['progress'],
@@ -10,17 +13,15 @@ module.exports = function (config) {
 
         colors: true,
 
-        port: 8100,
+        proxies: {
+            '/': 'http://localhost:8000/'
+        },
 
         runnerPort: 9100,
 
+
         files: [
-            '../app/lib/angular/angular.js',
-            'lib/angular/angular-mocks.js',
-
-            '../app/js/*.js',
-
-            'e2e/scenarios.js'
+            'test/e2e/**/*.js'
         ]
     });
 };
